@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+            <img src="image.jpg" alt="Habu Pite Logo" class="logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#apparel">Apparel</a></li>
+                <li><a href="#booking">Book Now</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Welcome to Habu Pite</h1>
+        <p>Laundry, Barbing, and Premium Apparel</p>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="service-list">
+            <div class="service-item">Washing</div>
+            <div class="service-item">Ironing</div>
+            <div class="service-item">Folding</div>
+            <div class="service-item">Dry Cleaning</div>
+            <div class="service-item">Stain Removal</div>
+            <div class="service-item">Haircuts (Various Styles)</div>
+            <div class="service-item">Shaving</div>
+            <div class="service-item">Beard Trims & Grooming</div>
+            <div class="service-item">Braidlock Services</div>
+            <div class="service-item">Hair Coloring & Tinting</div>
+            <div class="service-item">Home Service Barbing</div>
+        </div>
+    </section>
+
+    <section id="apparel" class="apparel">
+        <h2>Premium Apparel</h2>
+        <p>Explore our collection of original and high-quality:</p>
+        <ul>
+            <li>Kaftan</li>
+            <img src="kaftan1.jpg" alt="">
+            <li>Jalabia</li>
+            <img src="jalabia1 (1).jpg" alt="">
+            <li>Arabian & Northern Caps</li>
+            <img src="cap.jpg" alt="">
+        </ul>
+    </section>
+
+    <section id="booking" class="booking">
+        <h2>Book Your Appointment</h2>
+        <form id="bookingForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <label for="service">Service:</label>
+            <select id="service" required>
+                <option value="">Select a Service</option>
+                <option value="laundry">Laundry</option>
+                <option value="barbing">Barbing</option>
+                <option value="apparel">Apparel Purchase</option>
+            </select>
+             <label for="date">Date:</label>
+            <input type="date" id="date" required>
+            <button type="submit">Submit</button>
+        </form>
+        <p id="confirmation"></p>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Phone: 0707 036 9716</p>
+    </section>
+
+    <footer>
+        <p>© 2025 Habu Pite. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.getElementById("bookingForm");
+            const confirmation = document.getElementById("confirmation");
+
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+                const name = document.getElementById("name").value;
+                const service = document.getElementById("service").value;
+                const date = document.getElementById("date").value;
+
+                if (name && service && date) {
+                    confirmation.textContent = `Thank you, ${name}! Your ${service} appointment is booked for ${date}. We will contact you soon at 0707 036 9716.`;
+                    confirmation.style.color = "#28a745";
+                    form.reset();
+                } else {
+                     confirmation.textContent = "Please fill all fields.";
+                    confirmation.style.color = "#dc3545";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
