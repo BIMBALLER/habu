@@ -1,159 +1,343 @@
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
 body {
+    font-family: 'Roboto', Arial, sans-serif;
     line-height: 1.6;
     color: #333;
+    background-color: #f4f4f9;
 }
 
 header {
-    position: relative;
-    text-align: center;
-}
-.banner {
-    width: 100%;
-    height: auto;
-    max-height: 400px;
-    object-fit: cover;
-}
-
-.logo-container {
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
+    background-color: #1a3c5e;
+    color: #fff;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
-    width: 200px; /* Adjust size as needed */
+    max-width: 150px;
     height: auto;
-    border-radius: 50%;
-}
-nav {
-    background: #007bff;
-    padding: 1rem;
-    margin-top: 60px; /* Adjust to avoid overlap with logo */
+    display: block;
+    margin: 0 auto 1rem;
 }
 
 nav ul {
-    list-style: none;
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    list-style: none;
+    flex-wrap: wrap;
 }
 
-nav a {
-    color: white;
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
     text-decoration: none;
-    font-weight: bold;
-}
-nav a:hover {
-    color: #ffcc00;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
-.hero, .services, .apparel, .booking, .contact {
-    padding: 2rem;
+nav ul li a:hover {
+    color: #d4af37;
+}
+
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('showroom-bg.jpg');
+    background-size: cover;
+    background-position: center;
     text-align: center;
+    padding: 5rem 1rem;
+    color: #fff;
 }
 
 .hero h1 {
     font-size: 2.5rem;
-    color: #007bff;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+.services {
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #1a3c5e;
 }
 
 .service-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
+
 .service-item {
-    background: #007bff;
-    color: white;
-    padding: 0.5rem;
-    border-radius: 5px;
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+}
+
+.apparel {
+    padding: 3rem 1rem;
+    background-color: #fff;
+    text-align: center;
+}
+
+.apparel h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #1a3c5e;
+}
+
+.apparel p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
 }
 
 .apparel ul {
     list-style: none;
-    margin-top: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
 }
 
-.apparel li {
-    margin: 0.5rem 0;
-}
-
-.booking form {
+.apparel-item {
     display: flex;
     flex-direction: column;
-    max-width: 400px;
-    margin: 1rem auto;
-    gap: 0.5rem;
+    align-items: center;
+    background-color: #f4f4f9;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-.booking input, .booking select, .booking button {
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.apparel-item:hover {
+    transform: translateY(-8px);
 }
 
-.booking button {
-    background: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
+.apparel-item span {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1a3c5e;
+    margin-bottom: 0.75rem;
 }
 
-.booking button:hover {
-    background: #0056b3;
+.apparel-link {
+    text-decoration: none;
 }
-.contact {
-  padding-bottom: 50px; 
-  overflow: hidden; 
-}
-.contact p {
+
+.apparel .imge {
+    max-width: 100%;
+    width: 350px; 
+    max-height: 350px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
     margin: 0.5rem 0;
+    transition: transform 0.3s ease;
+}
+
+.apparel-item:hover .imge {
+    transform: scale(1.05);
+}
+
+.add-to-cart {
+    background-color: #d4af37; 
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    margin-top: 0.75rem;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #b8972e;
+}
+
+.booking {
+    padding: 3rem 1rem;
+    text-align: center;
+    background-color: #f4f4f9;
+}
+
+.booking h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #1a3c5e;
+}
+
+#bookingForm {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#bookingForm label {
+    font-weight: 500;
+    text-align: left;
+}
+
+#bookingForm input,
+#bookingForm select {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#bookingForm button {
+    background-color: #d4af37;
+    color: #fff;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#bookingForm button:hover {
+    background-color: #b8972e;
+}
+
+#confirmation {
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+.contact {
+    padding: 3rem 1rem;
+    text-align: center;
+    background-color: #1a3c5e;
+    color: #fff;
+}
+
+.contact h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.contact p {
+    font-size: 1.1rem;
 }
 
 footer {
-    background: #007bff;
-    color: white;
+    background-color: #0f2238;
+    color: #fff;
     text-align: center;
     padding: 1rem;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
 }
 
 @media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
     nav ul {
         flex-direction: column;
-        text-align: center;
+        align-items: center;
     }
-    .hero h1 {
-        font-size: 1.5rem;
+
+    nav ul li {
+        margin: 0.5rem 0;
     }
-    .banner {
-        max-height: 250px;
+
+    .services h2,
+    .apparel h2,
+    .booking h2,
+    .contact h2 {
+        font-size: 1.8rem;
     }
+
     .service-list {
         grid-template-columns: 1fr;
     }
-    .logo {
-        width: 150px; /* Smaller logo on mobile */
+
+    .apparel ul {
+        grid-template-columns: 1fr;
     }
-    .logo-container {
-        top: 5px;
+
+    .apparel .imge {
+        width: 280px;
+        max-height: 280px;
     }
-    nav {
-        margin-top: 50px;
+
+    .add-to-cart {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
     }
 }
 
+@media (max-width: 480px) {
+    .hero {
+        padding: 3rem 1rem;
+    }
 
+    .hero h1 {
+        font-size: 1.5rem;
+    }
 
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .logo {
+        max-width: 120px;
+    }
+
+    .apparel .imge {
+        width: 220px;
+        max-height: 220px;
+    }
+
+    .apparel-item {
+        padding: 1rem;
+    }
+
+    .add-to-cart {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    #bookingForm input,
+    #bookingForm select,
+    #bookingForm button {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+}
