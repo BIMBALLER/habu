@@ -1,12 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-<<<<<<< HEAD
 import App from './App.jsx'
-import './index.css' // THIS LINE MUST BE HERE
-=======
-import App from './App.jsx' // This line looks for the "default" export
-import './index.css'
->>>>>>> main
+import './index.css' // This imports your Tailwind styles
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
