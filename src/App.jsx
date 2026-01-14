@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 const STORE_DATA = {
     Jalabia: {
     tagline: "Executive Comfort",
-    landingImage: "/j3.jpg",
+    landingImage: "/jalabiaa.jpg",
     description: "Experience the prestige of our executive Jalabia collection.",
     products: Array.from({ length: 15 }, (_, i) => ({
       id: `j${i}`,
@@ -14,7 +14,7 @@ const STORE_DATA = {
   },
  Caps: {
     tagline: "Northern Excellence",
-    landingImage: "/c2.jpg",
+    landingImage: "/capp.png",
     description: "Hand-crafted northern excellence for the modern gentleman.",
     products: Array.from({ length: 15 }, (_, i) => ({
       id: `c${i}`,
@@ -24,7 +24,7 @@ const STORE_DATA = {
   },
   Laundry: {
     tagline: "Professional Care",
-    landingImage: "/images.jpg", // Change this to your finest laundry photo
+    landingImage: "/laaaaaa.jpg", // Change this to your finest laundry photo
     description: "Expert cleaning and precision ironing for your most valued garments.",
     products: [
       { id: "l1", name: "Wash & Steam Ironing", image: "/laundry-1.jpg" },
@@ -35,7 +35,7 @@ const STORE_DATA = {
   },
   Kaftan: {
     tagline: "Royal Heritage",
-    landingImage: "/k1.jpg", // A 'finer' hero image for the landing card
+    landingImage: "/kaftann.png", // A 'finer' hero image for the landing card
     description: "Showing 15 exclusive designs from our Kaftan heritage line.",
     products: Array.from({ length: 15 }, (_, i) => ({
       id: `k${i}`,
